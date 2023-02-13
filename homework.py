@@ -135,7 +135,6 @@ def read_package(workout_type: str, data: list[int]) -> Training:
         return train_dict[workout_type](*data)
 
 
-
 def main(training: Training) -> None:
     """Главная функция."""
     information = training.show_training_info()
