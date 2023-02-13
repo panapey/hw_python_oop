@@ -133,7 +133,7 @@ def read_package(workout_type: str, data: list[int]) -> Training:
                                              'WLK': SportsWalking}
     if workout_type in train_dict:
         return train_dict[workout_type](*data)
-    raise KeyError
+
 
 
 def main(training: Training) -> None:
