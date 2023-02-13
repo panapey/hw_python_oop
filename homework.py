@@ -126,14 +126,14 @@ class Swimming(Training):
             * self.SPEED_MULTIPLIER * self.weight * self.duration
 
 
-def read_package(workout_type: str, data: list[int]) -> Training:
+def read_package(workout_type: str, data: list) -> Training:
     """Прочитать данные полученные от датчиков."""
     train_dict: Dict[str, type[Training]] = {'SWM': Swimming,
                                              'RUN': Running,
                                              'WLK': SportsWalking}
     if workout_type in train_dict:
         return train_dict[workout_type](*data)
-
+    raise KeyError
 
 def main(training: Training) -> None:
     """Главная функция."""
