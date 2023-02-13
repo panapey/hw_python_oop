@@ -1,8 +1,7 @@
-from dataclasses import asdict, dataclass
+from dataclasses import asdict
 from typing import Type, Dict
 
 
-@dataclass
 class InfoMessage:
     """Информационное сообщение о тренировке."""
 
