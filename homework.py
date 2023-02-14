@@ -46,7 +46,7 @@ class Training:
 
     def get_spent_calories(self) -> float:
         """Получить количество затраченных калорий."""
-        raise NotImplementedError("To be implemented")
+        raise NotImplementedError("Do u implemented this in daughter class?")
 
     def show_training_info(self) -> InfoMessage:
         """Вернуть информационное сообщение о выполненной тренировке."""
@@ -110,8 +110,8 @@ class Swimming(Training):
         self.count_pool: int = count_pool
 
     def get_mean_speed(self) -> float:
-        return self.length_pool * self.count_pool \
-            / self.M_IN_KM / self.duration
+        return (self.length_pool * self.count_pool
+                / self.M_IN_KM / self.duration)
 
     def get_spent_calories(self) -> float:
         """Получить количество затраченных калорий."""
@@ -126,7 +126,7 @@ def read_package(workout_type: str, data: List[int]) -> Training:
                                              'WLK': SportsWalking}
     if workout_type in train_dict:
         return train_dict[workout_type](*data)
-    raise KeyError('No such training')
+    raise KeyError(f'No such training as {workout_type}')
 
 
 def main(training: Training) -> None:
